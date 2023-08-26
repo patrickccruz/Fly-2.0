@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+  <title>Alinhamento inicial</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,7 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -39,7 +38,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <span class="d-none d-lg-block">Fly 2.0</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -514,25 +513,161 @@
 
     <section class="section">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-14">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
-            </div>
+<div class="container-fluid mt-3" id="etapa1">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <article>
+        <div class="row mb-3">
+          <h2>Introdução ao Cliente</h2>
+        </div>
+        <div>
+          <h5 class="mb-3">Cliente faltou ?</h5>
+        </div>
+        <div class="mb-3" onclick="faltaClient()">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="faltaClient" id="inlineRadio1" value="yes" />
+            <label class="form-check-label" for="inlineRadio1">Sim</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="faltaClient" id="inlineRadio2" value="no" checked />
+            <label class="form-check-label" for="inlineRadio2">Não</label>
+          </div>
+        </div>
+        <div id="faltou3">
+          <!-- <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Leave a comment here" id="officer" oninput="teste()" />
+            <label for="floatingTextarea">Numero do Officer</label>
+          </div> -->
+
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Leave a comment here" id="dono" oninput="teste()" />
+            <label for="floatingTextarea">Dono do escritório:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Leave a comment here" id="resp" oninput="teste()" />
+            <label for="floatingTextarea">Responsável Técnico:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Leave a comment here" id="quem" oninput="teste()" />
+            <label for="floatingTextarea">Quem participou da consultoria:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="number" placeholder="Leave a comment here" id="usuario"
+              oninput="teste()" />
+            <label for="floatingTextarea">Usuários aproximado:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="number" placeholder="Leave a comment here" id="empresas"
+              oninput="teste()" />
+            <label for="floatingTextarea">Empresas aproximado:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text" placeholder="Leave a comment here" id="sistemaContabil"
+              oninput="teste()" />
+            <label for="floatingTextarea">Sistema Contábil:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text" placeholder="Leave a comment here" id="jaUsaram"
+              oninput="teste()" />
+            <label for="floatingTextarea">Ja usaram sistema de gestão:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text" placeholder="Leave a comment here" id="formas" oninput="teste()" />
+            <label for="floatingTextarea">Forma de entrega: (se recebem por email, wpp ou
+              físico):</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text" placeholder="Leave a comment here" id="maioriaRegimes"
+              oninput="teste()" />
+            <label for="floatingTextarea">Qual a maioria dos regimes tributários:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text" placeholder="Leave a comment here" id="valor" oninput="teste()" />
+            <label for="floatingTextarea">Valor da Acessórias mais chamou atenção:</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input class="form-control" type="text" placeholder="Leave a comment here" id="TicketApp"
+              oninput="teste()" />
+            <label for="floatingTextarea">Ticket do App e Area Vip:</label>
           </div>
         </div>
 
-        <div class="col-lg-12">
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" placeholder="Leave a comment here" id="ticket2" oninput="teste()" />
+          <label for="floatingTextarea">Ticket:</label>
+        </div>
+
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+              <h5 class="card-title">informações Adicionais</h5>
+              <!-- Quill Editor Full -->
+              <div class="quill-editor-full">
+              <!-- End Quill Editor Full -->
+            </div>
+          </div>
+
+        <div class="mb-3 mt-3" id="botao-geral">
+          <button type="button" class="btn btn-outline-primary" onclick="copResp()" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Copiar Texto
+          </button>
+          <button type="button" class="btn btn-outline-danger" onclick="deleteRespInicio()">
+            Apagar Tudo
+          </button>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Texto Copiado
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="alert alert-warning" role="alert">
+                  Não esqueça de colocar o ticket da consultoria e do app
+                </div>
+                <p id="etapa1resp1"></p>
+                <p id="etapa1resp2"></p>
+                <p id="etapa1resp3"></p>
+                <p id="etapa1resp4"></p>
+                <p id="etapa1resp5"></p>
+                <p id="etapa1resp6"></p>
+                <p id="etapa1resp7"></p>
+                <p id="etapa1resp8"></p>
+                <p id="etapa1resp9"></p>
+                <p id="etapa1resp10"></p>
+                <p id="etapa1resp12"></p>
+                <p id="etapa1resp11"></p>
+                <p id="etapa1resp13"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                  Fechar
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</div>
 
   </main><!-- End #main -->
 
@@ -542,10 +677,6 @@
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
