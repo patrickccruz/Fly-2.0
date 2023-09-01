@@ -387,16 +387,16 @@ function copRespFalta() {
   let resp1 = document.getElementById("etp-uso").value;
   document.getElementById(
     "respFaltou1"
-  ).innerHTML = `- Porcentagem de uso: ${resp1}%`;
-  let respFaltou1 = `Porcentagem de uso: ${resp1}%`;
+  ).innerHTML = ` - Porcentagem de uso: ${resp1}%`;
+  let respFaltou1 = ` - Porcentagem de uso: ${resp1}%`;
 
   let falta = document.getElementById("faltaCliente").value;
-  let respFaltou5 = `Informações sobre a falta: ${falta}`;
+  let respFaltou5 = ` - Informações sobre a falta: ${falta}`;
   document.getElementById(
     "respFaltou5"
-  ).innerHTML = `Informações sobre a falta: ${falta}`;
+  ).innerHTML = `- Informações sobre a falta: ${falta}`;
 
-  const textToCopy = `${resp0}\n${respFaltou1}\n${respFaltou2}\n${respFaltou3}\n${respFaltou4}\n\n${respFaltou5}`;
+  const textToCopy = `\n **Informação sobre a falta** ${resp0}\n${respFaltou1}\n\n${respFaltou5}`;
   const textarea = document.createElement("textarea");
   textarea.value = textToCopy;
   document.body.appendChild(textarea);
