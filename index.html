@@ -13,6 +13,9 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link
@@ -289,96 +292,42 @@
             </a>
           </li>
           <li>
-            <a href="Geral.html">
+            <a href="geral.html">
               <i class="bi bi-circle"></i><span>Etapa Geral</span>
             </a>
           </li>
           <li>
-            <a href="Migração.html">
+            <a href="migração.html">
               <i class="bi bi-circle"></i><span>Migração</span>
             </a>
           </li>
           <li>
-            <a href="Acomnpanhamento.html">
+            <a href="acompanhamento.html">
               <i class="bi bi-circle"></i><span>Acompanhamento</span>
             </a>
           </li>
         </ul>
       </li><!-- End Components Nav -->
 
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Sucesso do CLiente</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Obrigações</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Regime Tributário</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li> -->
-
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Resgate doe Clientes</span><i
-            class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="ResgateGeral.html">
-              <i class="bi bi-circle"></i><span>Etapas Gerais</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li> -->
-
       <li class="nav-heading">Links uteis </li>
-
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Perfil</span>
-        </a>
-      </li> -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
+          <i class="bx bxs-book-bookmark"></i>
           <span>Duvidas Frequentes</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
+          <i class="bx bx bxl-telegram"></i>
           <span>Contatos</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="https://app.pipefy.com/"target="_blank">
-          <i class="bi bi-envelope"></i>
+          <i class="bi bi-gem"></i>
           <span>Pipe Fly </span>
         </a>
       </li>
@@ -390,68 +339,102 @@
         </a>
       </li>
 
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Nova conta</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="WhatsApp.html">
+          <i class="bx bxl-whatsapp"></i>
+          <span>Chamar no WhatsApp</span>
         </a>
-      </li> -->
+      </li>
 
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Acesso</span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="anotar.html">
+          <i class="bi bi-briefcase-fill"></i>
+          <span>Anote aqui</span>
         </a>
-      </li> -->
-
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li> -->
-
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li> -->
+      </li>
+      
     </ul>
 
   </aside><!-- End Sidebar-->
 
-  <main id="main" class="main">
-    <!-- 
-    <div class="pagetitle">
-      <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
-    </div>End Page Title -->
+  <!-- Modal de Aviso -->
+
+    <main id="main" class="main">
+
       <section class="section">
-        <div class="col-lg-12">
-          <div class="card">
-            <!-- <div class="card-body">
-              <h5 class="card-title">Seja bem vindo a Fly 2.0</h5>
-              <p>Uma nova forma de fazer o preenchimento de relatórios</p>
-            </div> -->
-          </div>
-        </div>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="d-flex justify-content-center align-items-center">
-                <img src="assets/img/Fly2.0logo.png" width="1000" height="">
+        <div id="staticBackdrop" class="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Bem vindo ao fly 2.0 !!</h5>
+              </div>
+              <div class="modal-body">
+                Com essa musica maravilhosa dou a todos as boas vindas ao meu novo projeto pessoal/hobby. <br><br>
+                Nesse novo site vamos ter varias funções de atalhos e atualização de forma mais rápida e pratica. <br><br>
+                Bom mais vamos parar de lenga lenga e acessar agora todas as funções desse site.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
         </div>
       </section>
-  </main><!-- End #main -->
+
+  <!-- End Modal de Aviso -->
+
+      <section class="section">
+        <div class="col-lg-12">
+          <div class="carousel-inner">
+            <div class="d-flex justify-content-center align-items-center">
+              <img src="assets/img/Fly2.0logo.png" class="img-fluid" style="max-width: 100%;">
+              <audio autoplay>
+                <source src="assets/Y2meta.app - MENSAGEM DE NATAL - ROBERTO CARLOS 2011_ 2012 (128 kbps).mp3"
+                  type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mt-3">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/img/Menu Geral.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Menu Lateral</strong></h5>
+                <p class="card-text">Nesse menu lateral, você terá diversas opções, tanto de atalho quanto de opções para
+                  preencher relatórios do dia a dia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section mt-3">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/img/whatsapp.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><strong>Abra o WhatsApp dos clientes através da API</strong></h5>
+                <p class="card-text">Deseja falar com algum cliente pelo WhatsAp ou so gerar o link do WhatsAp Web no seu Ctrl V
+                agora voce pode com essa nova função do Fly. <br><br>
+                Caso voce coloque letras junto com o numero ele vai acusar um erro informado que </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  <!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -462,12 +445,10 @@
       Feito pelo <a href="https://www.linkedin.com/in/patrick-da-costa-cruz-08493212a/" target="_blank">Patrick C
         Cruz</a>
     </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
+  </footer>
+  <!-- End Footer -->
   <!-- Vendor JS Files -->
+  
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/chart.js/chart.umd.js"></script>
@@ -476,6 +457,11 @@
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    $(document).ready(function () {
+      // $('#staticBackdrop').modal('show'); show
+    });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
