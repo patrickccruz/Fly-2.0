@@ -76,5 +76,6 @@
     thisForm.querySelector('.error-message').innerHTML = error;
     thisForm.querySelector('.error-message').classList.add('d-block');
   }
+  
 
 })();
