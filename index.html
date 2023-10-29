@@ -73,6 +73,7 @@
           </a> -->
           <!-- End Notification Icon -->
 
+
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
               Voce tem 4 novas notificações
@@ -209,6 +210,11 @@
         </li><!-- End Messages Nav -->
 
         <li class="nav-item dropdown pe-3">
+
+          <div>
+            <label for="volumeControl"><strong>Volume da musica</strong></label>
+            <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+          </div>
 
           <!-- <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
@@ -352,7 +358,7 @@
           <span>Anote aqui</span>
         </a>
       </li>
-      
+
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -389,13 +395,13 @@
           <div class="carousel-inner">
             <div class="d-flex justify-content-center align-items-center">
               <img src="assets/img/Fly2.0logo.png" class="img-fluid" style="max-width: 100%;">
-              <audio autoplay>
-                <source src="assets/Y2meta.app - MENSAGEM DE NATAL - ROBERTO CARLOS 2011_ 2012 (128 kbps).mp3"
-                  type="audio/mpeg">
+              <audio id="musicPlayer" autoplay>
+                <source src="assets/lofi hip hop - brazil.mp3" type="audio/mpeg">
               </audio>
             </div>
           </div>
         </div>
+
       </section>
 
       <section class="section mt-3">
@@ -465,6 +471,46 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Salvar a o tempo da musica musica -->
+      <script>
+        // Obtenha o elemento de áudio
+        var audioPlayer = document.getElementById('musicPlayer');
+
+        // Verifique se há um tempo de reprodução salvo no armazenamento local
+        var savedPlaybackTime = localStorage.getItem('musicPlaybackTime');
+        if (savedPlaybackTime) {
+          audioPlayer.currentTime = parseFloat(savedPlaybackTime);
+        }
+
+        // Salve o tempo de reprodução no armazenamento local sempre que houver uma alteração
+        audioPlayer.addEventListener('timeupdate', function () {
+          localStorage.setItem('musicPlaybackTime', audioPlayer.currentTime);
+        });
+
+        // Lidar com o evento de pausa da página (antes de sair ou atualizar)
+        window.addEventListener('beforeunload', function () {
+          // Salve o tempo de reprodução antes de sair
+          localStorage.setItem('musicPlaybackTime', audioPlayer.currentTime);
+        });
+      </script>
+
+      <!-- Controla o volume da musica -->
+          <script>
+            // Obtenha o elemento de áudio
+            var audioPlayer = document.getElementById('musicPlayer');
+
+            // Obtenha o controle de volume
+            var volumeControl = document.getElementById('volumeControl');
+
+            // Defina o volume inicial com base no valor do controle
+            audioPlayer.volume = volumeControl.value;
+
+            // Atualize o volume quando o controle for modificado
+            volumeControl.addEventListener('input', function () {
+              audioPlayer.volume = volumeControl.value;
+            });
+          </script>
 
 </body>
 
