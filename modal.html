@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Bootstrap</title>
+    <!-- Inclua os arquivos CSS e JS do Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Formulário de Configuração</h2>
+        <div class="card basic">
+            <div class="form-check form-check-inline mt-3">
+                <form id="configuracaoForm">
+                    <div class="mb-3">
+                        <label for="nomeEscritorio" class="form-label">Nome do Escritório</label>
+                        <input type="text" class="form-control" id="nomeEscritorio"
+                            placeholder="Digite o nome do escritório">
+                    </div>
+                    <div class="mb-3">
+                        <label for="etapaSelecao" class="form-label">Etapa</label>
+                        <select class="form-select" id="etapaSelecao">
+                            <option value="Configuração Inicial">Configuração Inicial</option>
+                            <option value="lista de Entregas">Lista de Entregas</option>
+                            <option value="E - Continuo Avançado">E-Continuo Avançado</option>
+                            <option value="departamento">Departamento</option>
+                            <option value="Gestão de Processo">Gestão de Processo</option>
+                            <option value="areaVip">Área VIP</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="envioGeral" class="form-label">Envio Geral</label>
+                        <input type="number" class="form-control" id="envioGeral"
+                            placeholder="Informe o envio geral em números">
+                    </div>
+                    <div class="mb-3">
+                        <label for="envioRobo" class="form-label">Envio pelo Robô</label>
+                        <input type="number" class="form-control" id="envioRobo"
+                            placeholder="Informe o envio pelo robô em números">
+                    </div>
+                    <div class="mb-3">
+                        <label for="quantidadeFaltas" class="form-label">Quantidade de Faltas</label>
+                        <select class="form-select" id="quantidadeFaltas">
+                            <option value="0">0 faltas</option>
+                            <option value="1">1 falta</option>
+                            <option value="2">2 faltas</option>
+                            <option value="3">3 faltas</option>
+                            <option value="4">4 faltas</option>
+                            <option value="5">5 faltas</option>
+                            <option value="6">6 faltas</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+
+                <div id="formContainer" class="mt-4">
+                    <!-- Aqui serão adicionados os formulários gerados -->
+                </div>
+            </div>
+
+            <script>
+                document.getElementById("configuracaoForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    // Recupera os valores dos campos do formulário
+                    var nomeEscritorio = document.getElementById("nomeEscritorio").value;
+                    var etapaSelecao = document.getElementById("etapaSelecao").value;
+                    var envioGeral = document.getElementById("envioGeral").value;
+                    var envioRobo = document.getElementById("envioRobo").value;
+                    var quantidadeFaltas = document.getElementById("quantidadeFaltas").value;
+
+                    // Cria um novo card com campos de entrada editáveis
+                    var newCard = document.createElement("div");
+                    newCard.className = "card mt-4";
+                    newCard.style.display = "block";
+
+                    // Conteúdo do card com campos de entrada editáveis
+                    newCard.innerHTML = `
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h5 class="card-title"><strong>Informações Inseridas</strong></h5>
+                            <p><strong>Nome do Escritório:</strong> ${nomeEscritorio}</p>
+                            <p><strong>Etapa:</strong> ${etapaSelecao}</p>
+                            <p><strong>Envio Geral:</strong> ${envioGeral}</p>
+                            <p><strong>Envio pelo Robô:</strong> ${envioRobo}</p>
+                            <p><strong>Quantidade de Faltas:</strong> ${quantidadeFaltas} faltas</p>
+                            <button class="btn btn-primary mt-3 editButton">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                    // Adiciona o novo card à seção de formulários gerados
+                    document.getElementById("formContainer").appendChild(newCard);
+
+                    // Adicione a capacidade de editar as informações ao botão "Editar"
+                    newCard.querySelector(".editButton").addEventListener("click", function () {
+                        enableEdit(newCard);
+                    });
+                });
+
+                function enableEdit(card) {
+                    // Habilita a edição do card
+                    var cardTitle = card.querySelector(".card-title");
+                    cardTitle.textContent = "Editar Informações";
+                    var editButton = card.querySelector(".editButton");
+                    editButton.style.display = "none";
+
+                    // Cria botão "Salvar" e "Cancelar" para finalizar ou cancelar a edição
+                    var saveButton = document.createElement("button");
+                    saveButton.textContent = "Salvar";
+                    saveButton.className = "btn btn-primary";
+                    saveButton.addEventListener("click", function () {
+                        saveEdit(card);
+                    });
+
+                    var cancelButton = document.createElement("button");
+                    cancelButton.textContent = "Cancelar";
+                    cancelButton.className = "btn btn-secondary";
+                    cancelButton.addEventListener("click", function () {
+                        cancelEdit(card);
+                    });
+
+                    card.querySelector(".card-body").appendChild(saveButton);
+                    card.querySelector(".card-body").appendChild(cancelButton);
+
+                    // Habilita a edição dos campos
+                    card.querySelector("p:nth-child(2)").style.display = "none";
+                    card.querySelector("p:nth-child(3)").style.display = "none";
+                    card.querySelector("p:nth-child(4)").style.display = "none";
+                    card.querySelector("p:nth-child(5)").style.display = "none";
+
+                    var inputEtapa = document.createElement("select");
+                    inputEtapa.className = "form-select";
+                    inputEtapa.value = card.querySelector("p:nth-child(3)").textContent;
+                    inputEtapa.innerHTML = `
+                <option value="configuracaoInicial">Configuração Inicial</option>
+                <option value="listaEntregas">Lista de Entregas</option>
+                <option value="eContinuoAvancado">E-Continuo Avançado</option>
+                <option value="departamento">Departamento</option>
+                <option value="gestaoProcesso">Gestão de Processo</option>
+                <option value="app">App</option>
+                <option value="areaVip">Área VIP</option>
+            `;
+
+                    var inputEnvioGeral = document.createElement("input");
+                    inputEnvioGeral.className = "form-control";
+                    inputEnvioGeral.value = card.querySelector("p:nth-child(4)").textContent;
+
+                    var inputEnvioRobo = document.createElement("input");
+                    inputEnvioRobo.className = "form-control";
+                    inputEnvioRobo.value = card.querySelector("p:nth-child(5)").textContent;
+
+                    var inputQuantidadeFaltas = document.createElement("select");
+                    inputQuantidadeFaltas.className = "form-select";
+                    inputQuantidadeFaltas.value = card.querySelector("p:nth-child(6)").textContent;
+                    inputQuantidadeFaltas.innerHTML = `
+                <option value="0">0 faltas</option>
+                <option value="1">1 falta</option>
+                <option value="2">2 faltas</option>
+                <option value="3">3 faltas</option>
+                <option value="4">4 faltas</option>
+                <option value="5">5 faltas</option>
+                <option value="6">6 faltas</option>
+            `;
+
+                    card.querySelector("p:nth-child(3)").insertAdjacentElement("beforebegin", inputEtapa);
+                    card.querySelector("p:nth-child(4)").insertAdjacentElement("beforebegin", inputEnvioGeral);
+                    card.querySelector("p:nth-child(5)").insertAdjacentElement("beforebegin", inputEnvioRobo);
+                    card.querySelector("p:nth-child(6)").insertAdjacentElement("beforebegin", inputQuantidadeFaltas);
+                }
+
+                function saveEdit(card) {
+                    // Salva as edições no card
+                    var cardTitle = card.querySelector(".card-title");
+                    cardTitle.textContent = "Informações Inseridas";
+                    var editButton = card.querySelector(".editButton");
+                    editButton.style.display = "block";
+
+                    // Remove os botões "Salvar" e "Cancelar"
+                    card.querySelector(".btn-primary").remove();
+                    card.querySelector(".btn-secondary").remove();
+
+                    // Desabilita a edição dos campos
+                    card.querySelector("select").style.display = "none";
+                    card.querySelector("input").style.display = "none";
+                    card.querySelector("p:nth-child(2)").style.display = "block";
+                    card.querySelector("p:nth-child(3)").style.display = "block";
+                    card.querySelector("p:nth-child(4)").style.display = "block";
+                    card.querySelector("p:nth-child(5)").style.display = "block";
+
+                    // Atualiza os valores nos parágrafos
+                    card.querySelector("p:nth-child(2)").textContent = "Nome do Escritório: " + card.querySelector("select").value;
+                    card.querySelector("p:nth-child(3)").textContent = "Etapa: " + card.querySelector("input:nth-child(3)").value;
+                    card.querySelector("p:nth-child(4)").textContent = "Envio Geral: " + card.querySelector("input:nth-child(4)").value;
+                    card.querySelector("p:nth-child(5)").textContent = "Envio pelo Robô: " + card.querySelector("input:nth-child(5)").value;
+                    card.querySelector("p:nth-child(6)").textContent = "Quantidade de Faltas: " + card.querySelector("select:nth-child(6)").value;
+                }
+
+                function cancelEdit(card) {
+                    // Cancela a edição no card
+                    var cardTitle = card.querySelector(".card-title");
+                    cardTitle.textContent = "Informações Inseridas";
+                    var editButton = card.querySelector(".editButton");
+                    editButton.style.display = "block";
+
+                    // Remove os botões "Salvar" e "Cancelar"
+                    card.querySelector(".btn-primary").remove();
+                    card.querySelector(".btn-secondary").remove();
+
+                    // Desabilita a edição dos campos
+                    card.querySelector("select").style.display = "none";
+                    card.querySelector("input").style.display = "none";
+                    card.querySelector("p:nth-child(2)").style.display = "block";
+                    card.querySelector("p:nth-child(3)").style.display = "block";
+                    card.querySelector("p:nth-child(4)").style.display = "block";
+                    card.querySelector("p:nth-child(5)").style.display = "block";
+                    card.querySelector("p:nth-child(6)").style.display = "block";
+                }
+            </script>
+</body>
+
+</html>
