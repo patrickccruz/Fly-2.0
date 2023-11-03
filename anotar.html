@@ -431,14 +431,13 @@
                 </ol>
             </nav>
         </div>
-
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Anota ai</h5>
             
                 <!-- Quill Editor Full -->
                 <p>Precisa anotar algo? Aqui vai ser o seu ligar preferido</p>
-                <div class="quill-editor-full">
+                <div class="quill-editor-ful">
                     <div id="editor"></div>
                 </div>
             
@@ -471,6 +470,7 @@
     <script src="assets/vendor/echarts/echarts.min.js"></script>
     <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
 
+
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -484,7 +484,14 @@
     <script>
         // Inicializar o editor Quill
         var quill = new Quill('#editor', {
-            theme: 'snow'
+                modules: {
+                    toolbar: {
+                        container: '#toolbar',  // Selector for toolbar container
+                        handlers: {
+                            'bold': customBoldHandler
+                        }
+                    }
+                }
         });
 
         // Lidar com o clique no botão Gerar PDF
