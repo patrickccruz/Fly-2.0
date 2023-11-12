@@ -419,7 +419,7 @@ function textoMigra() {
   document.getElementById("Mresp11").innerHTML = `- Robô: ${Aresp11} %`;
 
   let Aresp12 = document.getElementById("gestao").value;
-  document.getElementById("Mresp12").innerHTML = `- Gestão: ${Aresp12} %`;
+  document.getElementById("Mresp12").innerHTML = `- Gestão: ${Aresp12}`;
 
   let Aresp13 = document.getElementById("app").value;
   document.getElementById("Mresp13").innerHTML = `- APP: ${Aresp13}`;
@@ -444,7 +444,7 @@ function textoMigra() {
   let Aresp17 = document.getElementById("relatorioMigração").value;
   document.getElementById(
     "Mresp17"
-  ).innerHTML = `- Resumo do treinamento ${Aresp17}`;
+  ).innerHTML = `- Resumo do treinamento: ${Aresp17}`;
 
   let Aresp18 = document.getElementById("obscervacaoMigração").value;
   document.getElementById(
